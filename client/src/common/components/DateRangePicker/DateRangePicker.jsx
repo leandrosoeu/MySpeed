@@ -14,9 +14,10 @@ export const DateRangePicker = ({ from, to, onChange, minDate, maxDate }) => {
     const popoverRef = useRef(null);
     const triggerRef = useRef(null);
 
-    const today = new Date();
-    today.setHours(23, 59, 59, 999);
-    const effectiveMaxDate = maxDate || today;
+    const effectiveMaxDate = new Date();
+    effectiveMaxDate.setDate(effectiveMaxDate.getDate() + 1);
+    effectiveMaxDate.setHours(23, 59, 59, 999);
+    
     const todayDateString = new Date().toDateString();
 
     useEffect(() => {
@@ -170,10 +171,9 @@ export const DateRangePicker = ({ from, to, onChange, minDate, maxDate }) => {
         setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
     };
 
-    const isCurrentMonthView = () => {
-        const now = new Date();
-        return currentMonth.getMonth() === now.getMonth() && 
-               currentMonth.getFullYear() === now.getFullYear();
+    const isMaxMonthView = () => {
+        return currentMonth.getFullYear() > effectiveMaxDate.getFullYear() || 
+               (currentMonth.getFullYear() === effectiveMaxDate.getFullYear() && currentMonth.getMonth() >= effectiveMaxDate.getMonth());
     };
 
     const weekDays = [
@@ -215,7 +215,7 @@ export const DateRangePicker = ({ from, to, onChange, minDate, maxDate }) => {
                         <button 
                             className="nav-btn" 
                             onClick={nextMonth}
-                            disabled={isCurrentMonthView()}
+                            disabled={isMaxMonthView()}
                         >
                             <FontAwesomeIcon icon={faChevronRight} />
                         </button>
