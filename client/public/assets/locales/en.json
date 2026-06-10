@@ -347,7 +347,10 @@
       "fair": "Fair",
       "poor": "Poor",
       "ping_variance": "Ping variance"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "calendar": {
     "select_range": "Select date range",

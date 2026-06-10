@@ -1,1 +1,0 @@
-export {BorderAnimation as default} from "./BorderAnimation.jsx";

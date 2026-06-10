@@ -1,1 +1,0 @@
-export {PauseDialog as default} from './PauseDialog';

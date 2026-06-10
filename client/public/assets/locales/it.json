@@ -268,7 +268,10 @@
       "avg": "Media",
       "down": "Scarica i valori",
       "up": "Caricare i valori"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Aggiungi server",

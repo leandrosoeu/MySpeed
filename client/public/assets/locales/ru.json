@@ -268,7 +268,10 @@
       "avg": "Среднее",
       "down": "Входящая скорость",
       "up": "Исходящая скорость"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Добавить сервер",

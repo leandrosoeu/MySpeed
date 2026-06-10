@@ -65,6 +65,10 @@ app.get("/export", password(true), async (req, res) => {
     }
 });
 
+app.get("/history/download", password(true), async (req, res) => {
+    res.json(await tests.listAllDownloadHistory());
+});
+
 app.post("/run", password(false), async (req, res) => {
     if (pauseController.currentState) return res.status(410).json({message: "The speedtests are currently paused"});
     if (await config.getValue("provider") === "none") return res.status(410).json({message: "No provider selected"});

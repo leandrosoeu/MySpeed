@@ -268,7 +268,10 @@
       "avg": "平均",
       "down": "下载速度",
       "up": "上传速度"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "添加服务器",

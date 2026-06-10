@@ -268,7 +268,10 @@
       "avg": "Média",
       "down": "Valores de download",
       "up": "Valores de upload"
-    }
+    },
+    "history_all": "Histórico Completo",
+    "tests": "testes",
+    "load_error": "Falha ao carregar dados"
   },
   "nodes": {
     "add": "Adicionar servidor",

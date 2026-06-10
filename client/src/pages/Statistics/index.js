@@ -1,1 +1,0 @@
-export {Statistics as default} from "./Statistics";

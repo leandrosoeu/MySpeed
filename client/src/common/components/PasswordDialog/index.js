@@ -1,1 +1,0 @@
-export {PasswordDialog as default} from './PasswordDialog';

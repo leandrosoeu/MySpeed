@@ -1,1 +1,0 @@
-export {NodeHeader as default} from "./NodeHeader";

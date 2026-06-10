@@ -1,1 +1,0 @@
-export {LanguageDialog as default} from "./LanguageDialog";

@@ -1,1 +1,0 @@
-export {OverviewChart as default} from "./OverviewChart";

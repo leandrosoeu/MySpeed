@@ -1,1 +1,0 @@
-export {StatisticContainer as default} from './StatisticContainer';

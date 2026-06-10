@@ -1,1 +1,0 @@
-export {StorageDialog as default} from "./StorageDialog";

@@ -1,1 +1,0 @@
-export {ExpandableCard as default} from "./ExpandableCard";

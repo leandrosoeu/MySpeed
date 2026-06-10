@@ -1,1 +1,0 @@
-export { SpeedChart as default } from "./SpeedChart";
