@@ -268,7 +268,10 @@
       "avg": "Gemiddeld",
       "down": "Waarden downloaden",
       "up": "Waarden uploaden"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Server toevoegen",

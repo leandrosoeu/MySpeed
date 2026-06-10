@@ -297,7 +297,10 @@
       "avg": "Durchschnitt",
       "down": "Download-Werte",
       "up": "Upload-Werte"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Server hinzufügen",

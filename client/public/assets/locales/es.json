@@ -268,7 +268,10 @@
       "avg": "Media",
       "down": "Velodidad de descarga",
       "up": "Velodidad de subida"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Añadir servidor",

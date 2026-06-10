@@ -268,7 +268,10 @@
       "avg": "Gennemsnit",
       "down": "Download-værdier",
       "up": "Upload-værdier"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Tilføj server",

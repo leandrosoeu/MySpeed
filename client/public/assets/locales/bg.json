@@ -268,7 +268,10 @@
       "avg": "Средно",
       "down": "Стойности за изтегляне",
       "up": "Качване на стойности"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Добавяне на сървър",

@@ -336,3 +336,57 @@ export const exportTests = async (fromDate, toDate) => {
         error: entry.error
     }));
 }
+export const listAllDownloadHistory = async () => {
+    const TARGET_POINTS = 500;
+
+    const dbEntries = await tests.findAll({
+        order: [["created", "ASC"]],
+        attributes: ["created", "download", "error"]
+    });
+
+    const valid = dbEntries.filter(e => e.error === null && e.download > 0);
+
+    if (valid.length === 0) return { labels: [], download: [], average: 0, total: 0, downsampled: false };
+
+    const avgDownload = parseFloat(
+        (valid.reduce((s, e) => s + e.download, 0) / valid.length).toFixed(2)
+    );
+
+    if (valid.length <= TARGET_POINTS) {
+        return {
+            labels: valid.map(e => e.created),
+            download: valid.map(e => parseFloat(e.download.toFixed(2))),
+            average: avgDownload,
+            total: valid.length,
+            downsampled: false
+        };
+    }
+
+    const first = new Date(valid[0].created).getTime();
+    const last  = new Date(valid[valid.length - 1].created).getTime();
+    const bucketSize = (last - first) / TARGET_POINTS;
+
+    const buckets = Array.from({ length: TARGET_POINTS }, (_, i) => ({
+        start: first + i * bucketSize,
+        end:   first + (i + 1) * bucketSize,
+        entries: []
+    }));
+
+    valid.forEach(e => {
+        const t = new Date(e.created).getTime();
+        const idx = Math.min(Math.floor((t - first) / bucketSize), TARGET_POINTS - 1);
+        buckets[idx].entries.push(e);
+    });
+
+    const labels = [], download = [];
+
+    buckets.forEach(b => {
+        if (b.entries.length === 0) return;
+        const mid = b.start + bucketSize / 2;
+        const avg = b.entries.reduce((s, e) => s + e.download, 0) / b.entries.length;
+        labels.push(new Date(mid).toISOString());
+        download.push(parseFloat(avg.toFixed(2)));
+    });
+
+    return { labels, download, average: avgDownload, total: valid.length, downsampled: true };
+};

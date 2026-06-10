@@ -268,7 +268,10 @@
       "avg": "Ortalama",
       "down": "İndirme değerleri",
       "up": "Yükleme değerleri"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Sunucu ekle",

@@ -268,7 +268,10 @@
       "avg": "Moyenne",
       "down": "Télécharger les valeurs",
       "up": "Charger des valeurs"
-    }
+    },
+    "history_all": "Full History",
+    "tests": "tests",
+    "load_error": "Failed to load data"
   },
   "nodes": {
     "add": "Ajouter un serveur",

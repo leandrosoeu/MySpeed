@@ -21,6 +21,7 @@ import PingChart from "@/pages/Statistics/charts/PingChart";
 import OverviewChart from "@/pages/Statistics/charts/OverviewChart";
 import AverageChart from "@/pages/Statistics/charts/AverageChart";
 import HourlyChart from "@/pages/Statistics/charts/HourlyChart.jsx";
+import { DownloadHistoryChart } from "@/pages/Statistics/charts/DownloadHistoryChart";
 import ConsistencyChart from "@/pages/Statistics/charts/ConsistencyChart";
 import ExportButton from "@/common/components/ExportButton";
 import i18n, {t} from "i18next";
@@ -171,6 +172,8 @@ export const Statistics = () => {
 
     const renderChart = (chartType) => {
         switch (chartType) {
+            case 'downloadHistory':
+                return <DownloadHistoryChart />;
             case 'overview':
                 return <OverviewChart tests={deferredStatistics.tests} time={deferredStatistics.time} dateRange={dateRange}/>;
             case 'latest':
@@ -206,6 +209,7 @@ export const Statistics = () => {
             </div>
 
             <OverviewChart tests={deferredStatistics.tests} time={deferredStatistics.time} dateRange={dateRange} onClick={() => setExpandedChart('overview')}/>
+            <DownloadHistoryChart onClick={() => setExpandedChart('downloadHistory')} />
             <LatestTestChart test={latestTest} onClick={() => setExpandedChart('latest')}/>
             <ConsistencyChart consistency={deferredStatistics.consistency} onClick={() => setExpandedChart('consistency')}/>
 
@@ -221,7 +225,7 @@ export const Statistics = () => {
             <ChartModal 
                 isOpen={!!expandedChart} 
                 onClose={() => setExpandedChart(null)}
-                isChart={['download', 'upload', 'ping', 'hourly'].includes(expandedChart)}
+                isChart={['download', 'upload', 'ping', 'hourly', 'downloadHistory'].includes(expandedChart)}
             >
                 {expandedChart && renderChart(expandedChart)}
             </ChartModal>
