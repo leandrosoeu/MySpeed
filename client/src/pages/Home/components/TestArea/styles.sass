@@ -8,16 +8,17 @@
   transform: translateX(-50%)
   left: 50%
   z-index: 50
-  background: $dark-gray
-  backdrop-filter: blur(10px)
-  border: $light-gray 2px solid
-  border-radius: 12px
-  padding: 12px 24px
+  background: rgba(15, 20, 25, 0.85)
+  backdrop-filter: blur(20px)
+  -webkit-backdrop-filter: blur(20px)
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  border-radius: 14px
+  padding: 10px 22px
   text-align: center
   font-weight: 600
   color: $white
-  box-shadow: 0 0 15px rgba($light-gray, 0.5)
-  animation: slideInDown 0.3s ease-out
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06)
+  animation: slideInDown 0.3s cubic-bezier(0.4, 0, 0.2, 1)
 
   span
     font-size: 22px
@@ -74,25 +75,28 @@
   bottom: 30px
   right: 30px
   z-index: 50
-  width: 56px
-  height: 56px
-  background: $dark-gray
-  backdrop-filter: blur(10px)
-  border: $light-gray 2px solid
+  width: 48px
+  height: 48px
+  background: rgba(15, 20, 25, 0.85)
+  backdrop-filter: blur(20px)
+  -webkit-backdrop-filter: blur(20px)
+  border: 1px solid rgba(255, 255, 255, 0.08)
   border-radius: 50%
-  color: $white
+  color: $subtext
   cursor: pointer
   display: flex
   align-items: center
   justify-content: center
-  box-shadow: 0 0 15px rgba($light-gray, 0.5)
-  transition: all 0.3s ease
-  animation: slideInUp 0.3s ease-out
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06)
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+  animation: slideInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)
   
   &:hover
     transform: translateY(-3px)
-    box-shadow: 0 4px 20px rgba($light-gray, 0.7)
-    background: $light-gray
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08)
+    background: rgba(26, 32, 41, 0.9)
+    border-color: rgba(16, 185, 129, 0.25)
+    color: $accent-primary
     
   &:active
     transform: translateY(-1px)

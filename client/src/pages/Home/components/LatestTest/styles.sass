@@ -5,38 +5,39 @@ $purple-secondary: #7c3aed
 $purple-glow: rgba(139, 92, 246, 0.4)
 
 .analyse-area
-  margin-top: 2rem
+  margin-top: 1.5rem
   display: flex
-  padding: 2.5rem 2rem
-  border: 1px solid $light-gray
+  padding: 2rem 1.75rem
+  border: 1px solid rgba(255, 255, 255, 0.06)
   background-color: var(--glass-bg)
-  backdrop-filter: blur(16px)
-  -webkit-backdrop-filter: blur(16px)
-  border-radius: 1rem
+  backdrop-filter: blur(24px)
+  -webkit-backdrop-filter: blur(24px)
+  border-radius: 1.25rem
   width: 100%
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
   align-items: center
   justify-content: center
-  margin-bottom: 2rem
+  margin-bottom: 1.5rem
   box-sizing: border-box
   user-select: none
   position: relative
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05)
 
 .pulse
-  border-color: $accent-primary
-  animation: pulse 2s infinite
+  border-color: rgba(16, 185, 129, 0.5)
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)
+  animation: pulse 2.5s ease-in-out infinite
 
 @keyframes pulse
   0%
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6)
-  70%
-    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0)
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)
+  50%
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(16, 185, 129, 0), inset 0 1px 0 rgba(255, 255, 255, 0.05)
   100%
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0)
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(16, 185, 129, 0), inset 0 1px 0 rgba(255, 255, 255, 0.05)
 
 .test-running
-  border: 1px solid $light-gray
+  border: 1px solid rgba(255, 255, 255, 0.06)
   animation: none
   position: relative
 
@@ -48,7 +49,7 @@ $purple-glow: rgba(139, 92, 246, 0.4)
   0%, 100%
     opacity: 0.3
   50%
-    opacity: 0.6
+    opacity: 0.65
 
 .inner-container
   margin-left: 2rem
@@ -61,53 +62,58 @@ $purple-glow: rgba(139, 92, 246, 0.4)
   align-items: center
 
 .tests-paused
-  border-color: $accent-warning
+  border-color: rgba(245, 158, 11, 0.4)
 
 .container-text
-  margin: 0 0 0 25px
+  margin: 0 0 0 20px
   color: $white
-  font-weight: 500
-  font-size: 24pt
+  font-weight: 600
+  font-size: 20pt
   white-space: nowrap
+  letter-spacing: -0.02em
 
 .container-subtext
   color: $subtext
-  font-size: 15pt
+  font-size: 13pt
   margin-left: 10px
   font-weight: 400
+  letter-spacing: 0.01em
 
 .container-main
   text-align: center
   color: $subtext
 
   h2
-    font-size: 28pt
-    font-weight: 600
-    margin: 1rem
+    font-size: 26pt
+    font-weight: 700
+    margin: 0.75rem
     display: flex
     align-items: center
     justify-content: center
+    letter-spacing: -0.03em
+    color: $white
 
 .jitter-suffix
-  font-size: 14pt
+  font-size: 12pt
   font-weight: 400
   color: $subtext
   cursor: pointer
-  transition: opacity 0.2s ease
+  transition: opacity 0.2s ease, color 0.2s ease
   padding-left: 0.4rem
   margin-left: 0.4rem
-  border-left: 2px solid $light-gray
-  opacity: 0.7
+  border-left: 1px solid rgba(255, 255, 255, 0.1)
+  opacity: 0.6
   display: flex
   align-items: center
   gap: 0.25rem
 
   &:hover
     opacity: 1
+    color: $white
 
   .jitter-icon
-    width: 0.9rem
-    height: 0.9rem
+    width: 0.85rem
+    height: 0.85rem
 
 @media (max-width: 1351px)
   .inner-container
@@ -133,3 +139,4 @@ $purple-glow: rgba(139, 92, 246, 0.4)
     padding-top: 1rem
   .inner-container
     margin: 0
+
